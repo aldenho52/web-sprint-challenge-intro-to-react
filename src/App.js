@@ -18,16 +18,13 @@ const App = () => {
 
   }, [])
 
-  const expandDetails = () => {
-    // ExtraDetails.classList.toggl(this.className)
-  }
 
   return (
     <div className="App">
       <h1 className="Header">Star Wars Characters</h1>
       {
         data.map(obj => {
-          return <Character data={obj} expandDetails={expandDetails}/>
+          return <Character data={obj}/>
         })
       }
     </div>

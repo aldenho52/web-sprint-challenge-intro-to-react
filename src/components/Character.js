@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import '../'
+
 
 const StyledChar = styled.div`
     background: lightgray;
@@ -16,25 +16,18 @@ const StyledChar = styled.div`
     }
 `
 
-const ExtraDetails = styled.div`
-    display: none;
-`
-
-
 const Character = (props) => {
-    const {data, expandDetails} = props
+    const {data} = props
 
     return (
-        <StyledChar onClick={evt => {expandDetails()}}>
+        <StyledChar >
             <h2>{data.name}</h2>
             <p>Birth Year: {data.birth_year}</p>
             <p>Gender: {data.gender}</p>
             <p>Height: {data.height}   Mass: {data.mass}</p>
-            <ExtraDetails>
-                <p>Eye color: {data.eye_color}</p>
-                <p>Hair color: {data.hair_color}</p>
-                <p>Skin Color: {data.skin_color}</p>
-            </ExtraDetails>
+            <p>Eye color: {data.eye_color}</p>
+            <p>Hair color: {data.hair_color}</p>
+            <p>Skin Color: {data.skin_color}</p>
         </StyledChar>
     )
 }
