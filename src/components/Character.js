@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
 import styled from 'styled-components'
+import '../'
 
 const StyledChar = styled.div`
     background: lightgray;
@@ -16,15 +16,25 @@ const StyledChar = styled.div`
     }
 `
 
+const ExtraDetails = styled.div`
+    display: none;
+`
+
 
 const Character = (props) => {
-    const {data} = props
+    const {data, expandDetails} = props
+
     return (
-        <StyledChar>
+        <StyledChar onClick={evt => {expandDetails()}}>
             <h2>{data.name}</h2>
             <p>Birth Year: {data.birth_year}</p>
             <p>Gender: {data.gender}</p>
             <p>Height: {data.height}   Mass: {data.mass}</p>
+            <ExtraDetails>
+                <p>Eye color: {data.eye_color}</p>
+                <p>Hair color: {data.hair_color}</p>
+                <p>Skin Color: {data.skin_color}</p>
+            </ExtraDetails>
         </StyledChar>
     )
 }
